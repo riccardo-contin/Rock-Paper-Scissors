@@ -1,0 +1,12 @@
+.basic {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#rules {
+  text-align: center;
+}
+
+#btnRules {
+  position: absolute;
+}
