@@ -1,8 +1,8 @@
-var modal = document.getElementById("rules-modal");
+let modal = document.getElementById("rules-modal");
 
-var btn = document.getElementById("btnRules");
+let btn = document.getElementById("btnRules");
 
-var span = document.getElementsByClassName("close")[0];
+let span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
 btn.onclick = function () {

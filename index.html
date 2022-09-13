@@ -26,15 +26,15 @@
       <img src="./images/logo.svg" alt="" />
       <div id="score">
         <p>SCORE</p>
-        <p>0</p>
+        <p id="scorePoints">0</p>
       </div>
     </div>
 
     <div id="step1">
       <img class="triangle" src="./images/bg-triangle.svg" alt="" />
-      <div class="paper" id="paper" onclick="pick('paper')"></div>
-      <div class="scissors" id="scissors" onclick="pick('scissors')"></div>
-      <div class="rock" id="rock" onclick="pick('rock')"></div>
+      <div class="paper" id="paper"></div>
+      <div class="scissors" id="scissors"></div>
+      <div class="rock" id="rock"></div>
     </div>
 
     <div class="duel" id="houseChoose">
@@ -48,20 +48,19 @@
       </div>
     </div>
 
-    <div class="duel" id="duel">
-      <p>YOU PICKED</p>
-      <p>THE HOUSE PICKED</p>
-      <div id="youPicked"></div>
-      <div id="housePicked"></div>
-    </div>
-
-    <div class="duel" id="result">
-      <p>YOU PICKED</p>
-      <p>THE HOUSE PICKED</p>
-      <div id="youPicked"></div>
-      <p id="messageResult"></p>
-      <button>PLAY AGAIN</button>
-      <div id="housePicked"></div>
+    <div class="duel" id="viewResult">
+      <div><p>YOU PICKED</p></div>
+      <div><p>THE HOUSE PICKED</p></div>
+      <div id="youPicked">
+        <div></div>
+      </div>
+      <div id="column">
+        <p id="messageResult"></p>
+        <button id="playAgain">PLAY AGAIN</button>
+      </div>
+      <div id="housePicked">
+        <div id="houseEmpty"></div>
+      </div>
     </div>
 
     <div id="rules">
