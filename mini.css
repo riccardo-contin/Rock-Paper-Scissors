@@ -7,6 +7,28 @@
   text-align: center;
 }
 
+#step1 {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.triangle {
+  width: 70%;
+}
+
+#paper {
+  width: 20%;
+  height: 20%;
+}
+
+#scissors {
+  width: 30px;
+}
+
+#rock {
+  width: 30px;
+}
+
 #btnRules {
   position: absolute;
 }

@@ -32,15 +32,36 @@
 
     <div id="step1">
       <img class="triangle" src="./images/bg-triangle.svg" alt="" />
-      <div id="paper">
-        <img class="paper" src="./images/icon-paper.svg" alt="" />
+      <div class="paper" id="paper" onclick="pick('paper')"></div>
+      <div class="scissors" id="scissors" onclick="pick('scissors')"></div>
+      <div class="rock" id="rock" onclick="pick('rock')"></div>
+    </div>
+
+    <div class="duel" id="houseChoose">
+      <div><p>YOU PICKED</p></div>
+      <div><p>THE HOUSE PICKED</p></div>
+      <div id="youPicked">
+        <div></div>
       </div>
-      <div id="scissors">
-        <img class="scissors" src="./images/icon-scissors.svg" alt="" />
+      <div id="housePicked">
+        <div id="houseEmpty"></div>
       </div>
-      <div id="rock">
-        <img class="rock" src="./images/icon-rock.svg" alt="" />
-      </div>
+    </div>
+
+    <div class="duel" id="duel">
+      <p>YOU PICKED</p>
+      <p>THE HOUSE PICKED</p>
+      <div id="youPicked"></div>
+      <div id="housePicked"></div>
+    </div>
+
+    <div class="duel" id="result">
+      <p>YOU PICKED</p>
+      <p>THE HOUSE PICKED</p>
+      <div id="youPicked"></div>
+      <p id="messageResult"></p>
+      <button>PLAY AGAIN</button>
+      <div id="housePicked"></div>
     </div>
 
     <div id="rules">
@@ -57,10 +78,7 @@
       </div>
     </div>
 
-    <div id="step2">
-      You Picked The House Picked You Win You Lose Play Again
-    </div>
-
     <script src="modal.js"></script>
+    <script src="game.js"></script>
   </body>
 </html>
