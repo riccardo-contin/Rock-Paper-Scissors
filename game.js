@@ -71,6 +71,10 @@ function duel(id) {
       break;
   }
 
+  setTimeout(viewResult, 2000, id, housePick, result);
+}
+
+function viewResult(id, housePick, result) {
   let score = parseInt(document.getElementById("scorePoints").textContent, 10);
   if (result === "win") {
     document.getElementById("messageResult").innerHTML = "YOU WIN";
@@ -79,19 +83,38 @@ function duel(id) {
     document.getElementById("messageResult").innerHTML = "YOU LOSE";
     score--;
   }
-  document.getElementById("scorePoints").innerHTML = score.toString();
 
-  setTimeout(viewResult, 2000);
-}
-
-function viewResult() {
   document.getElementById("house").setAttribute("id", "houseEmpty");
   document.getElementById("houseEmpty").removeAttribute("class");
   houseChoose.style.display = "none";
   viewResultDiv.style.display = "grid";
+
+  let list = document
+    .getElementById("youPickedResult")
+    .getElementsByTagName("div");
+  list[0].className = id;
+  document.getElementById("houseEmptyResult").className = housePick;
+  document.getElementById("houseEmptyResult").setAttribute("id", "houseResult");
+
+  if (result === "win") {
+    // non sono riuscito a realizzare i tre cerchi concentrici. Pensavo di utilizzare un gradiente a cerchio,
+    // ma non ho trovato la soluzione
+    document.getElementById("youPickedResult").style.background =
+      "radial-gradient(circle, hsl(210, 47%, 23%) 50%, hsl(205, 47%, 23%), hsl(200, 47%, 23%)";
+  } else if (result === "lose") {
+    document.getElementById("housePickedResult").style.background =
+      "radial-gradient(circle, hsl(210, 47%, 23%) 50%, hsl(205, 47%, 23%), hsl(200, 47%, 23%))";
+  }
+
+  document.getElementById("scorePoints").innerHTML = score.toString();
 }
 
 function restart() {
+  document.getElementById("messageResult").innerHTML = "";
+  document.getElementById("youPickedResult").style.background = "none";
+  document.getElementById("housePickedResult").style.background = "none";
+  document.getElementById("houseResult").setAttribute("id", "houseEmptyResult");
+  document.getElementById("houseEmptyResult").removeAttribute("class");
   viewResultDiv.style.display = "none";
   step1.style.display = "block";
 }
