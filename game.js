@@ -13,6 +13,29 @@ rock.addEventListener("click", pick);
 let playAgain = document.getElementById("playAgain");
 playAgain.addEventListener("click", restart);
 
+let score = parseInt(document.getElementById("scorePoints").textContent, 10);
+
+window.onbeforeunload = function () {
+  score = parseInt(document.getElementById("scorePoints").textContent, 10);
+  setCookie("score", score);
+};
+
+document.addEventListener("DOMContentLoaded", getCookie);
+
+// reperire il valore dello score
+function getCookie() {
+  console.log(document.cookie.split("="));
+  let cookieName = document.cookie.split("=")[0];
+  if (cookieName === "score") {
+    document.getElementById("scorePoints").textContent = document.cookie.split(
+      "="
+    )[1];
+  } else {
+    document.getElementById("scorePoints").textContent = "0";
+  }
+}
+
+// scelta giocata
 function pick(id) {
   step1.style.display = "none";
   houseChoose.style.display = "grid";
@@ -22,6 +45,7 @@ function pick(id) {
   setTimeout(duel, 2000, this.id);
 }
 
+// random scelta computer
 function housePick() {
   let num = Math.floor(Math.random() * 3) + 1;
   if (num === 1) {
@@ -32,6 +56,7 @@ function housePick() {
   return "rock";
 }
 
+// confronto giocata e emissione risultato
 function duel(id) {
   let housePick = this.housePick();
   document.getElementById("houseEmpty").className = housePick;
@@ -74,8 +99,9 @@ function duel(id) {
   setTimeout(viewResult, 2000, id, housePick, result);
 }
 
+// mostrare a video il risultato
 function viewResult(id, housePick, result) {
-  let score = parseInt(document.getElementById("scorePoints").textContent, 10);
+  score = parseInt(document.getElementById("scorePoints").textContent, 10);
   if (result === "win") {
     document.getElementById("messageResult").innerHTML = "YOU WIN";
     score++;
@@ -109,6 +135,7 @@ function viewResult(id, housePick, result) {
   document.getElementById("scorePoints").innerHTML = score.toString();
 }
 
+// impostazioni di restart
 function restart() {
   document.getElementById("messageResult").innerHTML = "";
   document.getElementById("youPickedResult").style.background = "none";
@@ -117,4 +144,9 @@ function restart() {
   document.getElementById("houseEmptyResult").removeAttribute("class");
   viewResultDiv.style.display = "none";
   step1.style.display = "block";
+}
+
+// creazione cookie con il valore dello score attuale
+function setCookie(name, value) {
+  document.cookie = name + "=" + value + ";";
 }

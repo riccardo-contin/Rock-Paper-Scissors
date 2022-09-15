@@ -1,6 +1,34 @@
+body {
+  margin: 0;
+}
+
 .basic {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-top: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: relative;
+  height: 80px;
+}
+
+.basic img {
+  position: absolute;
+  width: 90px;
+}
+
+#score {
+  padding-left: 25px;
+  padding-right: 25px;
+  right: 10px;
+  top: 1.1em;
+}
+
+#scoreTitle {
+  font-size: 0.7em;
+  margin-bottom: 0;
+}
+
+#scorePoints {
+  font-size: 2em;
 }
 
 #rules {
@@ -8,29 +36,116 @@
 }
 
 #step1 {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-top: 60px;
+  margin-left: 0%;
+  margin-right: 0%;
+  height: 350px;
+  width: 350px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .triangle {
-  width: 50%;
+  width: 250px;
 }
 
 #paper {
-  width: 20%;
-  height: 20%;
+  width: 45px;
+  height: 45px;
+  left: 0;
+}
+
+.paper {
+  background-size: 40px;
 }
 
 #scissors {
-  width: 30px;
+  width: 45px;
+  height: 45px;
+  right: 0;
+}
+
+.scissors {
+  background-size: 40px;
 }
 
 #rock {
-  width: 30px;
+  width: 45px;
+  height: 45px;
+  bottom: 5%;
+}
+
+.rock {
+  background-size: 40px;
+}
+
+#houseChoose {
+  margin-top: 100px;
+  grid-template-rows: 200px 30px;
+  grid-template-columns: 170px 170px;
+  justify-content: space-around;
+}
+
+.titleYou {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.titleHouse {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+#youPicked,
+#housePicked {
+  height: 150px;
+  width: 150px;
+}
+
+#youPicked div,
+#housePicked div {
+  position: static;
+  padding: 10px;
+}
+
+#viewResult {
+  margin-top: 100px;
+  grid-template-rows: 200px 30px 180px;
+  grid-template-columns: 170px 170px;
+  justify-content: space-around;
+}
+
+#column {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 3;
+  text-align: center;
+  width: 250px;
+}
+
+#youPickedResult,
+#housePickedResult {
+  height: 150px;
+  width: 150px;
+}
+
+#youPickedResult div,
+#housePickedResult div {
+  left: 50%;
+  top: 50%;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+}
+
+.duel p {
+  font-size: 1em;
 }
 
 #btnRules {
-  position: absolute;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #rules-modal {
@@ -46,6 +161,12 @@
 }
 
 #modal-content p {
-  margin-top: 30px;
+  margin-top: 0px;
   margin-bottom: 80px;
+  padding-top: 60px;
+}
+
+.close {
+  position: fixed;
+  bottom: 30px;
 }

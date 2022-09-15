@@ -5,17 +5,17 @@ let span = document.getElementsByClassName("close")[0];
 btn.addEventListener("click", openRules);
 span.addEventListener("click", closeRules);
 
-// When the user clicks the button, open the modal
+// apertura modale
 function openRules() {
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+// chiusura modale
 function closeRules() {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// chiusura modale in caso di click all'esterno
 window.onclick = function (event) {
   if (event.target === modal) {
     modal.style.display = "none";

@@ -30,7 +30,7 @@
       <img src="./images/logo.svg" alt="" />
       <div id="score">
         <p id="scoreTitle">SCORE</p>
-        <p id="scorePoints">0</p>
+        <p id="scorePoints"></p>
       </div>
     </div>
 
@@ -42,8 +42,8 @@
     </div>
 
     <div class="duel" id="houseChoose">
-      <div><p>YOU PICKED</p></div>
-      <div><p>THE HOUSE PICKED</p></div>
+      <div class="titleYou"><p>YOU PICKED</p></div>
+      <div class="titleHouse"><p>THE HOUSE PICKED</p></div>
       <div id="youPicked">
         <div></div>
       </div>
@@ -52,9 +52,13 @@
       </div>
     </div>
 
+    <!--In versione mobile non sono riuscito a impostare il
+    cerchio che si espande per un'errata scelta di div probabilmente
+    infatti aumentando le dimensioni del div in questione il bottone RULES
+    prende una posizione non consona-->
     <div class="duel" id="viewResult">
-      <div><p>YOU PICKED</p></div>
-      <div><p>THE HOUSE PICKED</p></div>
+      <div class="titleYou"><p>YOU PICKED</p></div>
+      <div class="titleHouse"><p>THE HOUSE PICKED</p></div>
       <div id="youPickedResult">
         <div></div>
       </div>
